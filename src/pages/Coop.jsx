@@ -1,6 +1,8 @@
 function Coop() {
     return (
-        <div>Coop</div>
+        <div className="bg-neutral-200">
+            Coop
+        </div>
     );
 }
 
