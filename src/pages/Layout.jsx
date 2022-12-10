@@ -11,6 +11,9 @@ function Layout() {
                     <li className="bg-blue-200 flex-grow">
                         <Link to="/coop">Coop</Link>
                     </li>
+                    <li className="bg-green-200 flex-grow">
+                        <Link to="/film-review">Film Review</Link>
+                    </li>
                 </ul>
             </nav>
             

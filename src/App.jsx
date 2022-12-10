@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Layout from './pages/Layout';
 import Coop from './pages/Coop';
 import NoPage from './pages/NoPage';
+import FilmReview from "./pages/FilmReview";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/coop" element={<Coop />} />
           <Route path="*" element={<NoPage />} />
         </Route>
+        <Route path="/film-review" element={<FilmReview />} />
       </Routes>
     </HashRouter>
   );
