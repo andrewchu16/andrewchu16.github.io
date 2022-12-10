@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShare, faPrint, faStar as faFilledStar} from '@fortawesome/free-solid-svg-icons';
+import { faShare, faPrint, faStar as faFilledStar, faX} from '@fortawesome/free-solid-svg-icons';
 import { faStar as faEmptyStar } from '@fortawesome/free-regular-svg-icons';
 import bookImage from '../assets/book.png';
 import movieImage from '../assets/the-grizzlies-hero.jpg';
@@ -26,7 +26,7 @@ function Header() {
     <header>
         <h1 className="text-5xl mb-4 text-center"><i>The Grizzlies</i> Review</h1>
         <div className="flex justify-between items-center mb-4">
-            <div className="basis-1/3">
+            <div className="basis-1/3 print:basis-1/2">
                 <span className="text-md">Andrew Chu</span>
                 <i className="mx-2">|</i>
                 <span className="text-md">December 9, 2022</span>
@@ -71,6 +71,16 @@ function Rating({rating, outOf}) {
     );
 }
 
+function Ad() {
+    return (
+    <div className="border-blue-500 border-dashed p-8 border-[1px] bg-blue-50 rounded-md my-4 font-sans relative print:hidden">
+        <FontAwesomeIcon icon={faX} className="absolute right-6 top-4 text-stone-600" />
+        <p className="text-lg text-center">Your Ad Belongs Here.</p>
+        <p className="text-sm text-center italic">Apply for an ad today.</p>
+    </div>
+    );
+}
+
 function FilmReview() {
     useEffect(() => {
         document.title = 'Book-Smart Reviews';
@@ -83,6 +93,7 @@ function FilmReview() {
         <h1 className="hidden print:block text-xl bold text-center">
             Please view the <a target="_blank" href="previouslynamedjeff.github.io/#/film-review" className="underline text-blue-700">website</a> for the proper experience.
         </h1>
+        <Ad />
         <Navigation />
         <main className="flex flex-col items-center bg-stone-100 py-8 md:px-[24%] px-20">
             <Header />
@@ -96,6 +107,7 @@ function FilmReview() {
                 <p className="text-xl print:text-md mb-6 leading-relaxed">
                     Although most characters in the film are believable and portrayed well, there are still certain characters that I believe can be improved. For example, the characters of Adam’s parents seem influenced by the “Stoic Indian” stereotype due to their lack of dialogue and silent reactions. When Russ talks with Adam’s parents about his return to school, Russ is left puzzled after all they tell him is the story of Sedna. Adam explains that “elders often answer a question with a story”, thus attributing their quiet demeanour to their age and the value they have for their culture. In addition, the widespread use of alcohol by students and adults seems highly exaggerated. While there is a large presence of alcoholism in the real town of Kugluktuk, the number of characters with drinking addictions plays into negative Indigenous stereotypes. Finally, the awe experienced by the lacrosse team when they first see skyscrapers in Toronto contributes to the idea that Indigenous people do not know or belong in cities. These elements add little to the plot of the story and could have been removed.
                 </p>
+                <Ad />
                 <p className="text-xl print:text-md mb-6 leading-relaxed">
                     Russ Sheppard is a well-developed character by Ben Schnetzer. His frustration, failures, and setbacks demonstrate that he is more than just a perfect, moral person meant to be a saviour. At times, he says the wrong things or undervalues the sacrifices made by his students. But, he always tries to make up for his mistakes because he knows he would not be the first person to disappoint the Inuit community.
                 </p>
