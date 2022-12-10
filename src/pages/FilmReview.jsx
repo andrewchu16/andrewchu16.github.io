@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare, faPrint, faStar as faFilledStar, faX} from '@fortawesome/free-solid-svg-icons';
 import { faStar as faEmptyStar } from '@fortawesome/free-regular-svg-icons';
@@ -22,6 +22,11 @@ function Navigation() {
 }
 
 function Header() {
+    const copyLink = () => {
+        let url = window.location.href;
+        navigator.clipboard.writeText(url);
+    }
+    
     return (
     <header>
         <h1 className="text-5xl mb-4 text-center"><i>The Grizzlies</i> Review</h1>
@@ -72,9 +77,21 @@ function Rating({rating, outOf}) {
 }
 
 function Ad() {
+    const [isOpen, setIsOpen] = useState(true);
+
+    const closeAd = () => {
+        setIsOpen(false);
+    }
+
+    let classes = "border-blue-500 border-dashed p-8 border-[1px] bg-blue-50 rounded-md my-4 font-sans relative print:hidden";
+
+    if (!isOpen) {
+        classes += " hidden";
+    }
+
     return (
-    <div className="border-blue-500 border-dashed p-8 border-[1px] bg-blue-50 rounded-md my-4 font-sans relative print:hidden">
-        <FontAwesomeIcon icon={faX} className="absolute right-6 top-4 text-stone-600" />
+    <div className={classes}>
+        <FontAwesomeIcon icon={faX} className="absolute right-6 top-4 text-stone-600 hover:cursor-pointer" onClick={closeAd}/>
         <p className="text-lg text-center">Your Ad Belongs Here.</p>
         <p className="text-sm text-center italic">Apply for an ad today.</p>
     </div>
@@ -118,11 +135,6 @@ function FilmReview() {
         </main>
     </div>
     );
-}
-
-const copyLink = () => {
-    let url = window.location.href;
-    navigator.clipboard.writeText(url);
 }
 
 export default FilmReview;
