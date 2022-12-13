@@ -31,7 +31,7 @@ function Header() {
     <header>
         <h1 className="text-5xl mb-4 text-center"><i>The Grizzlies</i> Review</h1>
         <div className="flex justify-between items-center mb-4">
-            <div className="basis-1/3 print:basis-1/2">
+            <div className="basis-2/5 print:basis-1/2">
                 <span className="text-md">Andrew Chu</span>
                 <i className="mx-2">|</i>
                 <span className="text-md">December 9, 2022</span>
