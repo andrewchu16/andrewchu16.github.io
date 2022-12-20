@@ -9,11 +9,9 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/coop" element={<Coop />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+        <Route path="*" element={<NoPage />} />
+        <Route index element={<Home />} />
+        <Route path="/coop" element={<Coop />} />
         <Route path="/film-review" element={<FilmReview />} />
       </Routes>
     </HashRouter>
