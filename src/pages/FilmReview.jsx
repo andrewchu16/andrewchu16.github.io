@@ -108,7 +108,7 @@ function FilmReview() {
     return (
     <div className="lg:mx-32 mt-8 bg-stone-200 print:m-0 ">
         <h1 className="hidden print:block text-xl bold text-center">
-            Please view the <a target="_blank" href="previouslynamedjeff.github.io/#/film-review" className="underline text-blue-700">website</a> for the proper experience.
+            Please view the <a target="_blank" href="andrewchu16.github.io/#/film-review" className="underline text-blue-700">website</a> for the proper experience.
         </h1>
         <Ad />
         <Navigation />
